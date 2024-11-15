@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('../assert/images/bg.jpg');
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    flex-direction: column;
+}
+
+.container {
+    width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    font-size: 4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    text-align: left; /* Ensure label text aligns to the left */
+    width: 100%; /* Align labels fully with inputs */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%; /* Full width for input fields */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.lbtn {
+    padding: 10px;
+    width: 100%; 
+}
+
+/* button:hover {
+    background-color: #45a049;
+} */
+
+p {
+    margin-top: 10px;
+    color: #555;
+    font-weight: 700;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Icon Styles */
+.icon {
+    width: 150px; 
+    height: auto; 
+
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%; 
+    }
+}
