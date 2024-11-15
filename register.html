@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/loginRegister.css">
+    <link rel="stylesheet" href="./css/btn.css">
+    <style>
+        .lbtn {
+            padding: 10px;
+            width: 95%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="./handlers/RegistrationHandler.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="txtName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="txtEmail" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="pass" name="password" onkeyup="conPassColor()" required>
+
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="conPass" name="txtPassword" onkeyup="conPassColor()" required>
+
+            <input type="submit" class="lbtn game-button green" value="Register" onclick="allToReg()" name="btnReg">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </form>
+    </div>
+
+    <script>
+        function conPassColor() {
+            let pass = document.getElementById("pass").value;
+            let conPass = document.getElementById("conPass").value;
+            var passColor = document.querySelector('#pass');
+            var conPassColor = document.querySelector('#conPass');
+
+            if ((pass == '') || (conPass == '')) {
+                passColor.style.borderBottom = "2px solid #fff";
+                conPassColor.style.borderBottom = "2px solid #fff";
+            }
+            else if (pass.length > 7) {
+                if (pass != conPass) {
+                    passColor.style.borderBottom = " 2px solid #ff0b0b";
+                    conPassColor.style.borderBottom = " 2px solid #ff0b0b";
+                }
+                else {
+                    passColor.style.borderBottom = " 2px solid #00fa21";
+                    conPassColor.style.borderBottom = " 2px solid #00fa21";
+                }
+            }
+            else {
+                passColor.style.borderBottom = " 2px solid blue";
+                conPassColor.style.borderBottom = " 2px solid blue";
+            }
+        }
+        function passCheck() {
+            let pass = document.getElementById("pass").value;
+            let conPass = document.getElementById("conPass").value;
+            if (pass.length > 7) {
+                if (pass != conPass) {
+                    alert("Password Not Matching");
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                alert("Password length less Plz Enter More Than 8 Characters");
+                return false;
+            }
+        }
+
+        function allToReg() {
+            if (passCheck()) {
+                alert("Registration Successful");
+            } else {
+                event.preventDefault();
+            }
+        }
+    </script>
+</body>
+
+</html>
