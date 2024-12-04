@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,61 +53,4 @@
         });
     </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./css/btn.css">
-    <link rel="stylesheet" href="./css/loginRegister.css">
-    <style>
-    .lbtn {
-        padding: 10px;
-        width: 95%; 
-        }
-    </style>
-</head>
-    
-    
-<body>
-    <div class="container">
-        <!-- Icon above the title -->
-        <img src="./assert/images/openeyes.png" alt="Login Icon" class="icon" id="icon-image">
-
-        <form action="login_process.php" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" class="lbtn game-button green" value="Login">
-            <p>Don't have an account? <a href="register.html">Register</a></p>
-        </form>
-    </div>
-    <script>
-      
-        const iconImage = document.getElementById("icon-image");
-        const usernameField = document.getElementById("username");
-        const passwordField = document.getElementById("password");
-
-       
-        passwordField.addEventListener("focus", () => {
-            iconImage.src = "./assert/images/closeeyes.png";
-        });
-
-    
-        usernameField.addEventListener("focus", () => {
-            iconImage.src = "./assert/images/openeyes.png";
-        });
-
-  
-        passwordField.addEventListener("blur", () => {
-            iconImage.src = "./assert/images/openeyes.png";
-        });
-    </script>
-</body>
->>>>>>> 340a09e217d45a7d2a0805ed83f20c624e5f81f9
 </html>
