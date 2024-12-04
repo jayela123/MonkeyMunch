@@ -1,28 +1,37 @@
-<?php session_start(); //start the new session
+<?php 
+session_start(); 
 include_once "./conection.php";
-if(isset($_POST["btnSubmit"]))
-{
-	$username=$_POST["username"];
-	$password=$_POST["password"];
-	
-	
-	
-	$sql = "SELECT * FROM `user` WHERE `un`='".$username."' and `pass`='".$password."'";
-	
-	$results=mysqli_query($con,$sql);
-	
-	if(mysqli_num_rows($results) > 0)
-	{
-		
-		$_SESSION["un"]=$username;
-		$row = mysqli_fetch_assoc($results);
-			header('location:../home.php');
-	}
-	else{
-		header('location:../login.html');
-	}
-}
-else{
-	header('location:../login.html');
+
+if (isset($_POST["btnSubmit"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    
+    
+    $stmt = $con->prepare("SELECT * FROM `user` WHERE `un` = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        
+        
+        if (password_verify($password, $row['pass'])) {
+            $_SESSION["un"] = $username; 
+            header('Location: ../home.php');
+            exit();
+        } else {
+          
+            header('Location: ../login.html');
+            exit();
+        }
+    } else {
+       
+        header('Location: ../login.html');
+        exit();
+    }
+} else {
+    header('Location: ../login.html');
+    exit();
 }
 ?>

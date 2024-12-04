@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  function fetchMotivationalQuoteForIncorrect() {
+  function getQuote() {
     fetch("https://api.realinspire.tech/v1/quotes/random?maxLength=100")
       .then((response) => response.json())
       .then((data) => {
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       feedback.classList.add("shake");
       setTimeout(() => feedback.classList.remove("shake"), 500);
       clearInterval(timer);
-      fetchMotivationalQuoteForIncorrect();
+      getQuote();
     }
   });
 
