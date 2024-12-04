@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .navbar {
     position: absolute;
@@ -47,4 +48,53 @@
     padding-top: 5px;
     padding-bottom: 5px;
 
+=======
+/* Navbar styling */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  /* Left and right container styling */
+  .left, .right {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Image styling */
+  .right img {
+    position: relative;
+    top: -1vh;
+    width: 150px;
+    height: auto;
+  
+  }
+  .left img{
+    position: relative;
+    top: -2vh;
+    left: 3vw;
+    width: 200px;
+    height: auto;
+  }
+  /* Text styling */
+  .right .text {
+    margin-right: 10px;
+    font-size: 18px;
+    background-color: #fff;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+>>>>>>> 340a09e217d45a7d2a0805ed83f20c624e5f81f9
   }
