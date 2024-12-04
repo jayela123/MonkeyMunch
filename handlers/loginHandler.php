@@ -1,5 +1,5 @@
 <?php 
-session_start(); 
+session_start(); //s
 include_once "./conection.php";
 
 if (isset($_POST["btnSubmit"])) {
